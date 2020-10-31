@@ -7,7 +7,7 @@ The main goal of this week is to transform the static site previously developed 
  - user : `admin@admin.com`
  - password : `admin123`
 
-## Members of the team
+## Members of the team week-4
 
 - **[William Sinclair](https://github.com/WilliamSinclairF)**
 
@@ -15,6 +15,15 @@ The main goal of this week is to transform the static site previously developed 
 
 - **[Loïc Rico](https://github.com/ricoloic)**
 
+## Members of the team week-7
+
+- **[Loïc Rico](https://github.com/ricoloic)**
+
+- **[Anthony Pageau](https://github.com/ricoloic)**
+
+- **[Jean-Francois Taillefer](https://github.com/ricoloic)**
+
+- **[Louis-Felix Beland](https://github.com/ricoloic)**
 
 
 ### The Repo : [Rocket Elevators Information System](https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System)

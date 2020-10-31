@@ -32,7 +32,7 @@ public/uploads
 .vscode
 
 *.Identifier
-database.yml
-dwh_db.yml
+# database.yml
+# dwh_db.yml
 
 public/uploads/lead/attachment
