@@ -3,7 +3,7 @@ class WatsonController < ApplicationController
     require "ibm_watson/text_to_speech_v1"
     include IBMWatson
     
-    def Greeting    
+    def greeting    
         authenticator = Authenticators::IamAuthenticator.new(
         apikey: ENV['TEXT_TO_SPEECH_IAM_APIKEY']
         )
@@ -16,7 +16,7 @@ class WatsonController < ApplicationController
         total_buildings = Building.count
         
         
-        File.open("hello_world.wav", "wb") do |audio_file|
+        File.open("app/assets/audio/greeting.wav", "wb") do |audio|
             response = text_to_speech.synthesize(
               text: "Hello world",
               accept: "audio/wav",
