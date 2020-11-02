@@ -39,3 +39,4 @@ public/uploads
 public/uploads/lead/attachmenttwilio.env
 
 /variables.env
+/twilio.env
