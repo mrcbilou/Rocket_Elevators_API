@@ -23,8 +23,8 @@ Elevator.destroy_all
 
 DatabaseCleaner.clean_with(:truncation)
 
-randCustomerCreation = 100
-randEmployeeCreation = 21
+randCustomerCreation = 10
+randEmployeeCreation = 1
 
 def seed_image
     File.open(File.join(Rails.root, "/app/assets/images/noYou/image.png"))
