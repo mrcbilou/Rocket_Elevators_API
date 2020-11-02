@@ -35,4 +35,7 @@ public/uploads
 # database.yml
 # dwh_db.yml
 
-public/uploads/lead/attachment
+#ignore api keys
+public/uploads/lead/attachmenttwilio.env
+
+/variables.env
