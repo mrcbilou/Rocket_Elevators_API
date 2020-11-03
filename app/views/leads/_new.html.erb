@@ -30,7 +30,7 @@
       <!-- ERROR VERIF TO BE ADDED -->
       <div class="col-lg-9 text-center">
         <%= simple_form_for Lead.new, validates: true do |form_lead| %>
-          <%= form_lead.error_notification %>
+          <%= form_lead.error_notification  %>
           <div>
             <div class="form-input">
               <div class="form-inputs row text-center">
@@ -42,7 +42,7 @@
                 <%= form_lead.input :department, as: :select, collection: ["Elevator Consultant", "Building Manager", "Architect"] %>
                 <%= form_lead.input :project_description, as: :text %>
                 <%= form_lead.input :message, as: :text %>
-                <div class="form-group col-md-10">
+                <div class="form-group col-md-10" >
                   <%= form_lead.file_field :attachment, class: "form-control" %>
                 </div>
                 <div class="form-group send-info">

@@ -30,6 +30,9 @@ gem "audited", github: "collectiveidea/audited"
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'actionpack-cloudflare'
 
+#Dropbox
+gem 'dropbox_api', '~> 0.1.18'
+
 # USER RELATED
 gem 'devise'
 gem 'simple_form'
@@ -105,3 +108,5 @@ group :production do
   # or :staging or :beta or whatever environments you are using cloudflare in.
   # you probably don't want this for :test or :development
 end
+
+
