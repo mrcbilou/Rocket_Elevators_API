@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem "audited", github: "collectiveidea/audited"
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'actionpack-cloudflare'
-
+gem 'ibm_watson'
 # USER RELATED
 gem 'devise'
 gem 'simple_form'
@@ -105,3 +105,4 @@ group :production do
   # or :staging or :beta or whatever environments you are using cloudflare in.
   # you probably don't want this for :test or :development
 end
+gem 'google_maps_service'
