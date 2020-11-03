@@ -108,3 +108,5 @@ end
 
 # permits the use of the Twilio API
 gem "twilio-ruby"
+
+gem "slack-notifier"
