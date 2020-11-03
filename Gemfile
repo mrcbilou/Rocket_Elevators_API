@@ -58,6 +58,8 @@ gem 'client_side_validations-simple_form'
 
 gem 'carrierwave', '~> 2.0'
 
+gem 'dropbox-sdk', '~> 1.6', '>= 1.6.5'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
