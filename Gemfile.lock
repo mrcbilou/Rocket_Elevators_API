@@ -140,6 +140,8 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    dropbox-sdk (1.6.5)
+      json
     erubi (1.9.0)
     execjs (2.7.0)
     faker (2.14.0)
@@ -173,6 +175,7 @@ GEM
       character_set (~> 1.4)
       regexp_parser (~> 1.6)
       regexp_property_values (~> 1.0)
+    json (2.3.1)
     jwt (2.2.2)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
@@ -376,6 +379,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner-active_record
   devise
+  dropbox-sdk (~> 1.6, >= 1.6.5)
   faker (~> 2.14)
   groupdate (~> 5.2, >= 5.2.1)
   jbuilder (~> 2.5)
