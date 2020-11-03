@@ -61,6 +61,8 @@ gem 'client_side_validations-simple_form'
 
 gem 'carrierwave', '~> 2.0'
 
+gem 'dropbox-sdk', '~> 1.6', '>= 1.6.5'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 
@@ -109,4 +111,5 @@ group :production do
   # you probably don't want this for :test or :development
 end
 
-
+# permits the use of the Twilio API
+gem "twilio-ruby"

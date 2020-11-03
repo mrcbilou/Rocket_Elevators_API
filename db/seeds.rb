@@ -254,7 +254,7 @@ def create_customer randCustomerCreation
             department: ["Elevator Consultant", "Building Manager", "Architect"].sample,
             project_description: Faker::Lorem.paragraph(sentence_count: 5),
             message: Faker::Lorem.paragraph(sentence_count: 5),
-            attachment: seed_image,
+            #attachment: seed_image,
             created_at: Time.at((tmp_user.created_at.to_f - Time.local(2020, 7, 8).to_f)*rand + Time.local(2020, 7, 8).to_f)
         )
 
