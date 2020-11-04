@@ -35,8 +35,23 @@ public/uploads
 # database.yml
 # dwh_db.yml
 
+<<<<<<< HEAD
 public/uploads/lead/attachment
 
 /ibm-credentials.env
 # Ignore application configuration
 /config/application.yml
+=======
+#ignore api keys
+public/uploads/lead/attachmenttwilio.env
+
+/variables.env
+/twilio.envtwilio.env
+/twilio.env
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
+>>>>>>> a990047b8d14fbf0e9ca5cdacb4cfbf68a0f7667

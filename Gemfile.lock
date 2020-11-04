@@ -73,7 +73,7 @@ GEM
     bindex (0.8.1)
     binding_of_caller (0.8.0)
       debug_inspector (>= 0.0.1)
-    bootsnap (1.4.8)
+    bootsnap (1.5.0)
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
@@ -113,7 +113,7 @@ GEM
     chromedriver-helper (2.1.1)
       archive-zip (~> 0.10)
       nokogiri (~> 1.8)
-    client_side_validations (17.1.0)
+    client_side_validations (17.1.1)
       js_regex (~> 3.1)
       rails (>= 5.0.0.1, < 6.1)
     client_side_validations-simple_form (11.1.0)
@@ -140,16 +140,27 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+<<<<<<< HEAD
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
+=======
+    dropbox-sdk (1.6.5)
+      json
+>>>>>>> a990047b8d14fbf0e9ca5cdacb4cfbf68a0f7667
     erubi (1.9.0)
     eventmachine (1.2.7)
     execjs (2.7.0)
     faker (2.14.0)
       i18n (>= 1.6, < 2)
+<<<<<<< HEAD
     faye-websocket (0.11.0)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
+=======
+    faraday (1.1.0)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords
+>>>>>>> a990047b8d14fbf0e9ca5cdacb4cfbf68a0f7667
     ffi (1.13.1)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
@@ -164,6 +175,7 @@ GEM
     haml (5.2.0)
       temple (>= 0.8.0)
       tilt
+<<<<<<< HEAD
     http (4.1.1)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -174,6 +186,9 @@ GEM
     http-form_data (2.3.0)
     http_parser.rb (0.6.0)
     hurley (0.2)
+=======
+    hashie (4.1.0)
+>>>>>>> a990047b8d14fbf0e9ca5cdacb4cfbf68a0f7667
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     ibm_cloud_sdk_core (1.1.1)
@@ -190,6 +205,7 @@ GEM
     image_processing (1.12.0)
       mini_magick (>= 4.9.5, < 5)
       ruby-vips (>= 2.0.17, < 3)
+    inflection (1.0.0)
     io-like (0.3.1)
     jbuilder (2.10.1)
       activesupport (>= 5.0.0)
@@ -199,10 +215,14 @@ GEM
       thor (>= 0.14, < 2.0)
     jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
-    js_regex (3.5.0)
+    js_regex (3.5.1)
       character_set (~> 1.4)
-      regexp_parser (~> 1.6)
+      regexp_parser (~> 1.8, >= 1.8.2)
       regexp_property_values (~> 1.0)
+<<<<<<< HEAD
+=======
+    json (2.3.1)
+>>>>>>> a990047b8d14fbf0e9ca5cdacb4cfbf68a0f7667
     jwt (2.2.2)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
@@ -228,13 +248,20 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (1.0.0)
+    mime-types (3.3.1)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2020.0512)
     mimemagic (0.3.5)
     mini_magick (4.10.1)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.14.2)
     msgpack (1.3.3)
+<<<<<<< HEAD
     multi_json (1.15.0)
+=======
+    multipart-post (2.1.1)
+>>>>>>> a990047b8d14fbf0e9ca5cdacb4cfbf68a0f7667
     mysql2 (0.5.3)
     nested_form (0.3.2)
     net-scp (3.0.0)
@@ -306,6 +333,7 @@ GEM
     retriable (2.1.0)
     ruby-vips (2.0.17)
       ffi (~> 1.9)
+    ruby2_keywords (0.0.2)
     ruby_dep (1.5.0)
     ruby_http_client (3.5.1)
     rubyzip (2.3.0)
@@ -339,6 +367,7 @@ GEM
     simple_form (5.0.3)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
+    slack-notifier (2.3.2)
     spring (2.1.1)
     spring-watcher-listen (2.0.1)
       listen (>= 2.7, < 4.0)
@@ -362,6 +391,10 @@ GEM
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
+    twilio-ruby (5.41.0)
+      faraday (>= 0.9, < 2.0)
+      jwt (>= 1.5, <= 2.5)
+      nokogiri (>= 1.6, < 2.0)
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     uglifier (4.2.0)
@@ -381,6 +414,12 @@ GEM
     websocket-extensions (0.1.5)
     xpath (3.2.0)
       nokogiri (~> 1.8)
+    zendesk_api (1.28.0)
+      faraday (>= 0.9.0, < 2.0.0)
+      hashie (>= 3.5.2, < 5.0.0)
+      inflection
+      mime-types
+      multipart-post (~> 2.0)
 
 PLATFORMS
   ruby
@@ -408,6 +447,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   database_cleaner-active_record
   devise
+  dropbox-sdk (~> 1.6, >= 1.6.5)
   faker (~> 2.14)
   figaro
   google_maps_service
@@ -428,14 +468,17 @@ DEPENDENCIES
   selenium-webdriver
   sendgrid-ruby
   simple_form
+  slack-notifier
   spring
   spring-watcher-listen (~> 2.0.0)
   sprockets-rails
   toastr-rails (~> 1.0)
   turbolinks (~> 5)
+  twilio-ruby
   tzinfo-data
   uglifier (>= 1.3.0)
   web-console (>= 3.3.0)
+  zendesk_api
 
 RUBY VERSION
    ruby 2.6.5p114
