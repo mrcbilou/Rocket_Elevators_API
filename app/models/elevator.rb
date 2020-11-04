@@ -14,7 +14,7 @@ class Elevator < ApplicationRecord
     status_changed = self.elevator_status_changed?
 
     if status_changed 
-      notifier = Slack::Notifier.new ""
+      notifier = Slack::Notifier.new ENV["slack_hook"]
       notifier.ping "The Elevator ##{self.id} with Serial Number #{self.serial_number} changed status from **#{self.elevator_status_was}** to **#{self.elevator_status}**"
     end
     yield
