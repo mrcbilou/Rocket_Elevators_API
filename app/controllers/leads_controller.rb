@@ -17,7 +17,7 @@ class LeadsController < ApplicationController
     end
 
     def authorize
-        dbsession = DropboxSession.new('jn6w9hunmjoz9wz', '471ypoftfnv8irv')
+        dbsession = DropboxSession.new('DropBox_Key', 'DropBox_Secret')
         #serialize and save this DropboxSession
         session[:dropbox_session] = dbsession.serialize
         #pass to get_authorize_url a callback url that will return the user here
@@ -70,7 +70,7 @@ class LeadsController < ApplicationController
     
     #       redirect_to :action => 'upload'
     #     else
-    #       dropbox_session = Dropbox::Session.new('sfsjsyd7bh1wuu0_skjrprw2zx7rvhv')
+    #       dropbox_session = Dropbox::Session.new('DropBox_Key', 'DropBox_Secret')
     #       session[:dropbox_session] = dropbox_session.serialize
     #       redirect_to dropbox_session.authorize_url(:oauth_callback => url_for(:action => 'authorize'))
     #     end
