@@ -6,8 +6,8 @@ class Quote < ApplicationRecord
     def new_quote_ticket
       client = ZendeskAPI::Client.new do |config|
         config.url = 'https://teamloic.zendesk.com/api/v2'
-        config.username = 'louisfelix95@hotmail.com'
-        config.token = 'fjTUb7syodwPpgWxxHW3UFKwpUcIPksIHEIoumyO'
+        config.username = ''
+        config.token = ''
       end
 
       user = User.find(self.user_id)
@@ -15,7 +15,7 @@ class Quote < ApplicationRecord
       lead = nil
 
       begin
-        lead = Lead.where(user_id: user.id).business_name
+        lead = Lead.find(user.id)
       rescue => exception
         puts "User does not have a business name yet!!"
       end

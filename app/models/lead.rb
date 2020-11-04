@@ -16,8 +16,8 @@ class Lead < ApplicationRecord
     def new_lead_ticket
       client = ZendeskAPI::Client.new do |config|
         config.url = 'https://teamloic.zendesk.com/api/v2'
-        config.username = 'louisfelix95@hotmail.com'
-        config.token = 'fjTUb7syodwPpgWxxHW3UFKwpUcIPksIHEIoumyO'
+        config.username = ''
+        config.token = ''
       end
 
       ZendeskAPI::Ticket.create!(client,

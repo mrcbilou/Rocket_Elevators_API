@@ -1,0 +1,3 @@
+class ElevatorsController < ApplicationController
+
+end
