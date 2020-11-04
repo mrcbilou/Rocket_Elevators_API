@@ -13,8 +13,8 @@ class Customer < ApplicationRecord
 
   def dropbox
     client = DropboxApi::Client.new "OJer-fIk1egAAAAAAAAAAXwWvxK41QGvguoxxxD8hJoYb_uTdMZhxrKZNcXarM8e"
-    # client.create_folder "/folder_name"
+    client.create_folder "/create_folder"
     pp client
-    client.upload "/text.txt", "hi", :mode => :add
+    client.upload "/create_folder/text.txt", "new folder/file", :mode => :add
   end
 end
