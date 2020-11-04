@@ -27,8 +27,8 @@ class Customer < ApplicationRecord
     end
 
     for l in customer_leads do
-      if l.attachment == ""
-        pp l.attachment.current_path
+      if l.attachment.file.nil? != nil
+        pp "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#{l.attachment_identifier}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
       end
 
       # pp "The customer ##{self.id} has the lead ##{l.id} and the lead has the attachment named #{}"
