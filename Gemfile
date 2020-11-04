@@ -112,3 +112,5 @@ end
 gem "twilio-ruby"
 
 gem "slack-notifier"
+
+gem "zendesk_api"
