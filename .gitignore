@@ -38,3 +38,5 @@ public/uploads
 public/uploads/lead/attachment
 
 /ibm-credentials.env
+# Ignore application configuration
+/config/application.yml
