@@ -10,7 +10,7 @@ class CreateLeads < ActiveRecord::Migration[5.2]
       t.text :project_description
       t.text :message
       t.string :attachment
-      t.belongs_to :user
+      t.belongs_to :customer, optional: true
 
       t.timestamps null: false
     end

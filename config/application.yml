@@ -10,6 +10,8 @@
 #   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
 #   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
 
+dropbox_token: LpGdPkte5BsAAAAAAAAAATfM9_VyJUFF79fBMp2iAuBywkTLSrVw3zh6Qr3Y1o-7
+
 zendesk_email: louisfelix95@hotmail.com
 
 zendesk_token: fjTUb7syodwPpgWxxHW3UFKwpUcIPksIHEIoumyO
@@ -19,10 +21,6 @@ TWILIO_ACCOUNT_SID: ACab428b7e54e6aa4f3ffd74b2b92d5f08
 TWILIO_AUTH_TOKEN: 3dd8a31b56f9ff6cd5e61be216546a99
 
 RECIPIENT_PHONE_NUMBER: '+18198171295'
-
-slack_hook: https://hooks.slack.com/services/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
-
-dropbox_token: OJer-fIk1egAAAAAAAAAAXwWvxK41QGvguoxxxD8hJoYb_uTdMZhxrKZNcXarM8e
 
 dropbox_key: szbhdmwiygul1c1
 

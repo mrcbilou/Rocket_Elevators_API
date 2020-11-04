@@ -245,7 +245,7 @@ def create_customer randCustomerCreation
         tmp_customer_address.update('customer_id' => tmp_customer.id)
         
         tmp_lead = Lead.create(
-            user_id: tmp_user.id,
+            customer_id: tmp_customer.id,
             full_name: tmp_user.first_name + " " + tmp_user.last_name,
             email: tmp_user.email,
             phone: Faker::PhoneNumber.cell_phone,

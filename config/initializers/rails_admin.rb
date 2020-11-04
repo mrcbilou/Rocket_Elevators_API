@@ -45,14 +45,6 @@ RailsAdmin.config do |config|
     exclude_fields :id
   end
 
-  config.model 'Customer' do
-    object_label_method do
-    :custom_label_method
-    end
-    exclude_fields :id
-  end
-
-
   ### Popular gems integration
 
   ## == Devise ==
