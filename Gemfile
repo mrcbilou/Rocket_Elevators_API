@@ -31,7 +31,10 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'actionpack-cloudflare'
 
 #Dropbox
-gem 'dropbox_api', '~> 0.1.18'
+gem 'dropbox_api'
+gem 'omniauth'
+gem 'omniauth-dropbox-oauth2'
+gem 'faraday', '~> 1.0.0'
 
 # USER RELATED
 gem 'devise'

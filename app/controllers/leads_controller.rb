@@ -5,24 +5,24 @@ class LeadsController < ApplicationController
         @leads = Lead.where(:user_id => current_user.id)
     end
     
-    def dropbox_callback
-        dbsession = DropboxSession.deserialize(session[:dropbox_session])
-        dbsession.get_access_token #we've been authorized, so now request an access_token
-        session[:dropbox_session] = dbsession.serialize
-        current_user.update_attributes(:dropbox_session => session[:dropbox_session])
-        session.delete :dropbox_session
-        flash[:success] = "You have successfully authorized with dropbox."
+    # def dropbox_callback
+    #     dbsession = DropboxSession.deserialize(session[:dropbox_session])
+    #     dbsession.get_access_token #we've been authorized, so now request an access_token
+    #     session[:dropbox_session] = dbsession.serialize
+    #     current_user.update_attributes(:dropbox_session => session[:dropbox_session])
+    #     session.delete :dropbox_session
+    #     flash[:success] = "You have successfully authorized with dropbox."
             
-        redirect_to root_path
-    end
+    #     redirect_to root_path
+    # end
 
-    def authorize
-        dbsession = DropboxSession.new('DropBox_Key', 'DropBox_Secret')
-        #serialize and save this DropboxSession
-        session[:dropbox_session] = dbsession.serialize
-        #pass to get_authorize_url a callback url that will return the user here
-        redirect_to dbsession.get_authorize_url url_for(:action => 'dropbox_callback')
-    end
+    # def authorize
+    #     dbsession = DropboxSession.new('dropbox_key', 'dropbox_secret')
+    #     #serialize and save this DropboxSession
+    #     session[:dropbox_session] = dbsession.serialize
+    #     #pass to get_authorize_url a callback url that will return the user here
+    #     redirect_to dbsession.get_authorize_url url_for(:action => 'dropbox_callback')
+    # end
 
     def create
         @lead = Lead.new(lead_params)
@@ -34,7 +34,7 @@ class LeadsController < ApplicationController
 
         @lead.save
 
-        authorize
+        # authorize
 
         # dbsession = DropboxSession.deserialize(current_user.dropbox_session)
         # # create the dropbox client object
