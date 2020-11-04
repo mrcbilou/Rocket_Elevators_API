@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
-  post "watson/greeting" => "watson#greeting"
+  get 'greeting' => 'watson#greeting'
   resources :leads
-  resources :quotes , only: [:user_quotes, :new, :create]
-  resources :watson
   root to: 'static_pages#index'
   get 'static_pages/residential'
   get 'static_pages/corporate'
-
   devise_for :users,
   :controllers => { registrations: 'registrations'},
   :path_prefix => '',

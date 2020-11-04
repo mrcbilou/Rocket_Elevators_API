@@ -4,7 +4,7 @@ class WatsonController < ApplicationController
     include IBMWatson
     
     def greeting   
-        authenticator = Authenticators::IamAuthenticator.new(
+        authenticator = IBMWatson::Authenticators::IamAuthenticator.new(
         apikey: ENV['IBM_KEY']
         )
         text_to_speech = TextToSpeechV1.new(
@@ -24,12 +24,12 @@ class WatsonController < ApplicationController
    
         File.open("app/assets/audio/greeting.wav", "wb") do |audio_file|
             response = text_to_speech.synthesize(          
-                text: "Greetings. There are currently #{elevators} elevators deployed in the #{buildings} buildings of your #{customers} customers. Currently, #{not_active_elevators} are not in 
-                        Running Status and are being serviced. You currently have #{quotes} quotes awaiting processing. You currently have #{leads} leads in your contact requests. #{batteries} Batteries are deployed across #{cities} cities",
+                text: "Greetings.",
                 accept: "audio/wav",
                 voice: "en-US_AllisonV3Voice"
             )
             audio_file.write(response.result)
+            redirect_back(fallback_location:"/")
         end
     end
 end
