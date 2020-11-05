@@ -107,10 +107,8 @@ group :production do
   # or :staging or :beta or whatever environments you are using cloudflare in.
   # you probably don't want this for :test or :development
 end
-<<<<<<< HEAD
 gem 'google_maps_service'
 gem "figaro"
-=======
 
 # permits the use of the Twilio API
 gem "twilio-ruby"
@@ -118,4 +116,3 @@ gem "twilio-ruby"
 gem "slack-notifier"
 
 gem "zendesk_api"
->>>>>>> a990047b8d14fbf0e9ca5cdacb4cfbf68a0f7667

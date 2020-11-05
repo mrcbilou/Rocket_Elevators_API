@@ -140,27 +140,21 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-<<<<<<< HEAD
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
-=======
     dropbox-sdk (1.6.5)
       json
->>>>>>> a990047b8d14fbf0e9ca5cdacb4cfbf68a0f7667
     erubi (1.9.0)
     eventmachine (1.2.7)
     execjs (2.7.0)
     faker (2.14.0)
       i18n (>= 1.6, < 2)
-<<<<<<< HEAD
-    faye-websocket (0.11.0)
-      eventmachine (>= 0.12.0)
-      websocket-driver (>= 0.5.1)
-=======
     faraday (1.1.0)
       multipart-post (>= 1.2, < 3)
       ruby2_keywords
->>>>>>> a990047b8d14fbf0e9ca5cdacb4cfbf68a0f7667
+    faye-websocket (0.11.0)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.5.1)
     ffi (1.13.1)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
@@ -175,7 +169,7 @@ GEM
     haml (5.2.0)
       temple (>= 0.8.0)
       tilt
-<<<<<<< HEAD
+    hashie (4.1.0)
     http (4.1.1)
       addressable (~> 2.3)
       http-cookie (~> 1.0)
@@ -186,9 +180,6 @@ GEM
     http-form_data (2.3.0)
     http_parser.rb (0.6.0)
     hurley (0.2)
-=======
-    hashie (4.1.0)
->>>>>>> a990047b8d14fbf0e9ca5cdacb4cfbf68a0f7667
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
     ibm_cloud_sdk_core (1.1.1)
@@ -219,10 +210,7 @@ GEM
       character_set (~> 1.4)
       regexp_parser (~> 1.8, >= 1.8.2)
       regexp_property_values (~> 1.0)
-<<<<<<< HEAD
-=======
     json (2.3.1)
->>>>>>> a990047b8d14fbf0e9ca5cdacb4cfbf68a0f7667
     jwt (2.2.2)
     kaminari (1.2.1)
       activesupport (>= 4.1.0)
@@ -257,11 +245,8 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.14.2)
     msgpack (1.3.3)
-<<<<<<< HEAD
     multi_json (1.15.0)
-=======
     multipart-post (2.1.1)
->>>>>>> a990047b8d14fbf0e9ca5cdacb4cfbf68a0f7667
     mysql2 (0.5.3)
     nested_form (0.3.2)
     net-scp (3.0.0)
@@ -335,7 +320,6 @@ GEM
       ffi (~> 1.9)
     ruby2_keywords (0.0.2)
     ruby_dep (1.5.0)
-    ruby_http_client (3.5.1)
     rubyzip (2.3.0)
     rvm1-capistrano3 (1.4.0)
       capistrano (~> 3.0)
@@ -362,8 +346,6 @@ GEM
     selenium-webdriver (3.142.7)
       childprocess (>= 0.5, < 4.0)
       rubyzip (>= 1.2.2)
-    sendgrid-ruby (6.3.6)
-      ruby_http_client (~> 3.4)
     simple_form (5.0.3)
       actionpack (>= 5.0)
       activemodel (>= 5.0)
@@ -466,7 +448,6 @@ DEPENDENCIES
   rvm1-capistrano3
   sass-rails (~> 5.0)
   selenium-webdriver
-  sendgrid-ruby
   simple_form
   slack-notifier
   spring
