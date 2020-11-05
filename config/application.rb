@@ -8,7 +8,6 @@ Bundler.require(*Rails.groups)
 # ENV['RAILS_ADMIN_THEME'] = 'rollincode'
 ENV['RAILS_ADMIN_THEME'] = 'material'
 
-
 module App
   class Application < Rails::Application
     # Initialize configuration defaults for originally generated Rails version.
