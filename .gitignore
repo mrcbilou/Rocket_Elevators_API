@@ -34,10 +34,6 @@ public/uploads
 
 .vscode
 
-*.Identifier
-database.yml
-dwh_db.yml
-
 #ignore api keys
 public/uploads/lead/attachmenttwilio.env
 
@@ -50,3 +46,5 @@ public/uploads/lead/attachmenttwilio.env
 
 # Ignore application configuration
 /config/application.yml
+/config/database.yml
+/config/dwh_db.yml
