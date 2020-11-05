@@ -10,11 +10,9 @@ class Customer < ApplicationRecord
     customer_leads = Lead.where(customer_id: self.id)
     client = DropboxApi::Client.new ENV["dropbox_token"]
     folder_list = client.list_folder('', :recursive => false)
-    pp folder_list
-    # pp client
-    maybe = false
-
     user = User.find(self.user_id)
+
+    maybe = false
 
     for folder in folder_list.entries do
       if folder.name == user.first_name
@@ -27,15 +25,11 @@ class Customer < ApplicationRecord
     end
 
     for l in customer_leads do
-      if l.attachment.file.nil? != nil
-        pp "!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!#{l.attachment_identifier}!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+      if !l.attachment.file.nil?
+        file_content = IO.read "#{l.attachment.current_path}"
+
+        client.upload "/#{user.first_name}/#{l.attachment_identifier}", file_content, :mode => :add
       end
-
-      # pp "The customer ##{self.id} has the lead ##{l.id} and the lead has the attachment named #{}"
-
-      # lead_attachment_list = client.list_folder('', :recursive => false)
-
-      # client.upload "/create_folder/test.txt", "new folder/file", :mode => :add
     end
   end
 end
