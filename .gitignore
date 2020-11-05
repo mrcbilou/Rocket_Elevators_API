@@ -35,8 +35,8 @@ public/uploads
 .vscode
 
 *.Identifier
-# database.yml
-# dwh_db.yml
+database.yml
+dwh_db.yml
 
 #ignore api keys
 public/uploads/lead/attachmenttwilio.env
