@@ -51,3 +51,6 @@ public/uploads/lead/attachmenttwilio.env
 
 # Ignore application configuration
 /config/application.yml
+
+# Ignore application configuration
+/config/application.yml
