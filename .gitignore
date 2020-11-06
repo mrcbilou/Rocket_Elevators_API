@@ -48,3 +48,6 @@ public/uploads/lead/attachmenttwilio.env
 /config/application.yml
 /config/database.yml
 /config/dwh_db.yml
+
+# Ignore application configuration
+/config/application.yml

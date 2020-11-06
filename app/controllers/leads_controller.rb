@@ -2,13 +2,13 @@ require 'dropbox_sdk'
 
 class LeadsController < ApplicationController
     def user_leads
-        @leads = Lead.where(:customer_id => current_user.id)
+        @leads = Lead.where(:user_id => current_user.id)
     end
 
     def create
         @lead = Lead.new(lead_params)
         if user_signed_in?
-            @lead.customer_id = current_user.id
+            @lead.user_id = current_user.id
         end
 
         @lead.save
@@ -34,7 +34,7 @@ class LeadsController < ApplicationController
     end
 
     private
-        def lead_params
-            params.require(:lead).permit(:attachment, :full_name, :email, :phone, :business_name, :project_name, :department, :project_description, :message, :user_id)
-        end
+    def lead_params
+        params.require(:lead).permit(:attachment, :full_name, :email, :phone, :business_name, :project_name, :department, :project_description, :message, :user_id)
+    end
 end

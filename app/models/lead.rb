@@ -1,7 +1,7 @@
 require "date"
 
 class Lead < ApplicationRecord
-    belongs_to :customer, optional: true
+    belongs_to :user, optional: true
     validates :full_name, presence: true, allow_blank: false
     validates :email, presence: true, allow_blank: false
     validates :phone, presence: true, allow_blank: false
