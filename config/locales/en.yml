@@ -35,6 +35,6 @@ en:
   admin:
     actions:
       tools:
-        menu: "Tools"
-        title: "Tools"
-        breadcrumb: "Tools"
+        menu: "Products Information"
+        title: "Products Information"
+        breadcrumb: "Products Information"
