@@ -13,7 +13,7 @@ class LeadsController < ApplicationController
 
         @lead.save
 
-        sendMail
+        # sendMail
 
         respond_to do |format|
             if @lead.save && user_signed_in?
