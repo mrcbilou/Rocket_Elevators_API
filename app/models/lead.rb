@@ -13,13 +13,13 @@ class Lead < ApplicationRecord
     
     mount_uploader :attachment, AttachmentUploader
 
-    # after_create :new_lead_ticket
+    after_create :new_lead_ticket
 
     def new_lead_ticket
       client = ZendeskAPI::Client.new do |config|
         config.url = 'https://teamloic.zendesk.com/api/v2'
-        config.username = ENV['zendesk_email']
-        config.token = ENV['zendesk_token']
+        config.username = ENV['ZENDESK_EMAIL']
+        config.token = ENV['ZENDESK_TOKEN']
       end
 
       ZendeskAPI::Ticket.create!(client,

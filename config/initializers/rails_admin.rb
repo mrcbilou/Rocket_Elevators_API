@@ -1,4 +1,5 @@
 require Rails.root.join('lib', 'rails_admin', 'tools.rb')
+require Rails.root.join('lib', 'rails_admin', 'map.rb')
 
 RailsAdmin.config do |config|
   config.authorize_with :cancancan
@@ -72,6 +73,7 @@ RailsAdmin.config do |config|
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
   config.actions do
+    map
     tools
     dashboard                     # mandatory
     index                         # mandatory

@@ -3,9 +3,9 @@ require 'slack-notifier'
 
 class Elevator < ApplicationRecord
   belongs_to :column
-  
-  # around_update :send_slack_notif
-  # after_update :twilio_txt
+
+  around_update :send_slack_notif
+  after_update :twilio_txt
 
   private
 
@@ -13,7 +13,7 @@ class Elevator < ApplicationRecord
     status_changed = self.elevator_status_changed?
 
     if status_changed
-      notifier = Slack::Notifier.new ENV['slack_webhook']
+      notifier = Slack::Notifier.new ENV['SLACK_WEBHOOK']
       notifier.ping "The Elevator ##{self.id} with Serial Number #{self.serial_number} changed status from **#{self.elevator_status_was}** to **#{self.elevator_status}**"
     end
     yield

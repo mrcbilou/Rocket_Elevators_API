@@ -1,13 +1,13 @@
 class Quote < ApplicationRecord
   belongs_to :user, optional: true
 
-  # after_create :new_quote_ticket
+  after_create :new_quote_ticket
 
   def new_quote_ticket
     client = ZendeskAPI::Client.new do |config|
       config.url = 'https://teamloic.zendesk.com/api/v2'
-      config.username = ENV['zendesk_email']
-      config.token = ENV['zendesk_token']
+      config.username = ENV['ZENDESK_EMAIL']
+      config.token = ENV['ZENDESK_TOKEN']
     end
 
     user = User.find(self.user_id)

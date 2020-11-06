@@ -38,3 +38,7 @@ en:
         menu: "Products Information"
         title: "Products Information"
         breadcrumb: "Products Information"
+      map:
+        menu: "Building Map"
+        title: "Building Map"
+        breadcrumb: "Building Map"

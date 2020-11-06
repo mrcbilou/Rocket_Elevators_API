@@ -8,20 +8,17 @@ class ApplicationController < ActionController::Base
     end
   end
 
-
   rescue_from ActionController::InvalidAuthenticityToken, with: :redirect_and_prompt_for_sign_in
 
   protected
-
-    def redirect_and_prompt_for_sign_in
-      redirect_to(new_user_session_path, alert: 'Please sign in.')
-    end
+  def redirect_and_prompt_for_sign_in
+    redirect_to(new_user_session_path, alert: 'Please sign in.')
+  end
 
   private
-
-    def after_sign_out_path_for(resource)
-      new_user_session_path
-    end
+  def after_sign_out_path_for(resource)
+    new_user_session_path
+  end
 
 
   skip_before_action :verify_authenticity_token
