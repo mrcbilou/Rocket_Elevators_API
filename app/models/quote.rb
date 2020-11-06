@@ -1,7 +1,7 @@
 class Quote < ApplicationRecord
   belongs_to :user, optional: true
 
-  after_create :new_quote_ticket
+  # after_create :new_quote_ticket
 
   def new_quote_ticket
     client = ZendeskAPI::Client.new do |config|
@@ -11,14 +11,8 @@ class Quote < ApplicationRecord
     end
 
     user = User.find(self.user_id)
-
     lead = nil
-
-    begin
-      lead = Lead.find(user.id)
-    rescue => exception
-      puts "User does not have a business name yet!!"
-    end
+    lead = Lead.find(user.id)
 
     ZendeskAPI::Ticket.create!(client,
     :subject => "New quote request from #{user.first_name}",

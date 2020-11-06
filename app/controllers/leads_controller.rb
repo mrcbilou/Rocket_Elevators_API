@@ -13,7 +13,7 @@ class LeadsController < ApplicationController
 
         @lead.save
 
-        sendMail
+        # sendMail
 
         respond_to do |format|
             if @lead.save && user_signed_in?
@@ -48,11 +48,7 @@ class LeadsController < ApplicationController
 
         sg = SendGrid::API.new(api_key: ENV['SENDGRID_API_KEY'])
         
-        begin
-            response = sg.client.mail._('send').post(request_body: mail.to_json)
-        rescue Message.e
-            pp e.message
-        end
+        response = sg.client.mail._('send').post(request_body: mail.to_json)
     end
 
     def edit

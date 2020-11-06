@@ -3,18 +3,18 @@ class Customer < ApplicationRecord
   has_one :address, :dependent => :delete
   belongs_to :user
 
-  after_create :dropbox
-  after_update :dropbox
+  # after_create :dropbox
+  # after_update :dropbox
 
   def dropbox
     user = User.find(self.user_id)
     user_leads = Lead.where(user_id: user.id)
-    client = DropboxApi::Client.new ENV["dropbox_token"]
+    client = DropboxApi::Client.new(ENV["dropbox_token"])
     folder_list = client.list_folder('', :recursive => false)
 
     maybe_folder = false
     maybe_file = false
-
+    
     for folder in folder_list.entries do
       if folder.name == "#{user.first_name}_#{user.last_name}"
         maybe_folder = true
