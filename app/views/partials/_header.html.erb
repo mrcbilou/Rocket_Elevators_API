@@ -40,9 +40,6 @@
             <li><!-- CONTACT -->
               <%= link_to 'CONTACT', root_path(anchor: "contact"), 'data-turbolinks': false %>
             </li>
-            <li><!-- BACKOFFICE -->
-              <%= link_to 'MAP', map_path %>
-            </li>
             <% if can? :read, Quote %>
               <li><!-- BACKOFFICE -->
                 <%= link_to 'BACKOFFICE', rails_admin_path %>

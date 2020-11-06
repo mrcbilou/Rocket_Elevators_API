@@ -57,6 +57,9 @@ gem 'faker', '~> 2.14'
 
 gem 'figaro'
 
+gem 'gmaps4rails'
+gem "geocoder"
+
 # Suppressing RangeError during type casting
 gem 'activerecord-suppress_range_error', '~> 0.1.1'
 

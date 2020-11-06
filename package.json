@@ -2,6 +2,7 @@
   "name": "app",
   "private": true,
   "dependencies": {
+    "axios": "^0.21.0",
     "highcharts": "^8.2.0"
   }
 }

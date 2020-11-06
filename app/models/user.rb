@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
     "#{first_name} #{last_name}"
   end
 
-  validates_uniqueness_of :email 
+  validates_uniqueness_of :email
   validates_presence_of :email
 end

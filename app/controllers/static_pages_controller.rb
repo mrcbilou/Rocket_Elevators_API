@@ -10,7 +10,4 @@ class StaticPagesController < ApplicationController
 
   def corporate
   end
-
-  def map
-  end
 end
