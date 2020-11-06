@@ -3,17 +3,16 @@ require "ibm_watson/text_to_speech_v1"
 include IBMWatson
 
 class WatsonController < ActionController::Base
-  
     def speak
         authenticator = Authenticators::IamAuthenticator.new(
-            apikey: ""
+            apikey: ENV['IBM_KEY']
         )
         text_to_speech = TextToSpeechV1.new(
             authenticator: authenticator
         )
             
-        text_to_speech.service_url = ""
-        
+        text_to_speech.service_url = ENV['IBM_URL']
+
         first_name = current_user.first_name
         last_name = current_user.last_name
         elevators = Elevator.count
@@ -35,5 +34,4 @@ class WatsonController < ActionController::Base
                         audio_file.write(response)
         end    
     end
-  
 end
