@@ -5,7 +5,8 @@
 The main goal of this week ...
 
 **Here is the information you must enter in the sign in page to access the BackOffice :**
--  the site is only available in an http connection for now. It is also possible that your browser tries to redirect you to a secure connection so please make sure that you are 	in an http only connection.
+-  The site is only available in an **http connection** for now. 
+- It is also possible that your **browser tries to redirect you to a secure connection** so please make sure that you are 	in an **http only connection**.
 
 -   user :  `admin@admin.com`
 -   password :  `admin123`
@@ -229,6 +230,7 @@ The data of the new tables that we have created are created from the data alread
  - IBM Watson API
 	 - 
 	 - As an admin , access the Backoffice of the website and select the **Products Information** tab in the dashboard page. You will see a media player with a play button press play and you will hear information about the current status of the company based on the requirement  sheet.
+	 - To refresh the message, if you have deleted ,added or updated data  in the elevators and building tables, you **must log out** of the admin user an **log back in as the admin**.
 	
  - SendGrid API
 	 - 
