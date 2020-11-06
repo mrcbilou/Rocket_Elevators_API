@@ -5,7 +5,8 @@
 The main goal of this week ...
 
 **Here is the information you must enter in the sign in page to access the BackOffice :**
--  the site is only available in an http connection for now
+-  the site is only available in an http connection for now. It is also possible that your browser tries to redirect you to a secure connection so please make sure that you are 	in an http only connection.
+
 -   user :  `admin@admin.com`
 -   password :  `admin123`
 
