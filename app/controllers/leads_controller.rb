@@ -15,10 +15,10 @@ class LeadsController < ApplicationController
 
         respond_to do |format|
             if @lead.save && user_signed_in?
-                format.html { redirect_to my_leads_path, notice: 'Your lead as been successfully register !' }
+                format.html { redirect_to my_leads_path, notice: 'Your lead as been successfully registered !' }
 
             elsif @lead.save && !user_signed_in?
-                format.html { redirect_to root_path, notice: 'Your lead as been successfully register !' }
+                format.html { redirect_to root_path, notice: 'Your lead as been successfully registered !' }
             else
                 format.html { render :new }
             end

@@ -48,7 +48,7 @@
   <div class="container">
     <div class="text-center">
       <h2 class="fs-40 fw-300">We have clients all over the world!</h2>
-      <a class="btn btn-red btn-lg" href="/quotes/new">GET A QUOTE <i class="fa fa-angle-right"></i></a>
+      <%= button_to "Info", { :controller => "watson", :action => "greeting"}, class: 'btn btn-danger' %>
     </div>
   </div>
 </section>

@@ -36,6 +36,7 @@ gem 'omniauth'
 gem 'omniauth-dropbox-oauth2'
 gem 'faraday', '~> 1.0.0'
 
+gem 'ibm_watson'
 # USER RELATED
 gem 'devise'
 gem 'simple_form'
@@ -115,6 +116,8 @@ group :production do
   # or :staging or :beta or whatever environments you are using cloudflare in.
   # you probably don't want this for :test or :development
 end
+gem 'google_maps_service'
+gem "figaro"
 
 # permits the use of the Twilio API
 gem "twilio-ruby"

@@ -1,3 +1,5 @@
+require Rails.root.join('lib', 'rails_admin', 'tools.rb')
+
 RailsAdmin.config do |config|
   config.authorize_with :cancancan
 
@@ -46,7 +48,6 @@ RailsAdmin.config do |config|
   end
 
   ### Popular gems integration
-
   ## == Devise ==
   config.authenticate_with do
     warden.authenticate! scope: :user
@@ -70,7 +71,6 @@ RailsAdmin.config do |config|
   ## == Gravatar integration ==
   ## To disable Gravatar integration in Navigation Bar set to false
   # config.show_gravatar = true
-
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
@@ -80,7 +80,6 @@ RailsAdmin.config do |config|
     show
     edit
     delete
-
     ## With an audit adapter, you can add:
     # history_index
     # history_show
