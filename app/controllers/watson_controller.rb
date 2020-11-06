@@ -5,7 +5,6 @@ include IBMWatson
 class WatsonController < ActionController::Base
   
     def speak
-  
         authenticator = Authenticators::IamAuthenticator.new(
             apikey: ""
         )
