@@ -5,7 +5,7 @@
 The main goal of this week ...
 
 **Here is the information you must enter in the sign in page to access the BackOffice :**
-
+-  the site is only available in an http connection for now
 -   user :  `admin@admin.com`
 -   password :  `admin123`
 
