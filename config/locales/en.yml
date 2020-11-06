@@ -31,3 +31,10 @@
 
 en:
   hello: "Hello world"
+
+  admin:
+    actions:
+      tools:
+        menu: "Tools"
+        title: "Tools"
+        breadcrumb: "Tools"

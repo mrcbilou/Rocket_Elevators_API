@@ -1,3 +1,4 @@
+require Rails.root.join('lib', 'rails_admin', 'tools.rb')
 
 RailsAdmin.config do |config|
   config.authorize_with :cancancan

@@ -24,4 +24,3 @@
 //= link demo.revolution_slider.js
 //= link quote.js
 //= link rails_admin/custom/ui.js
-//= link_tree ../audios

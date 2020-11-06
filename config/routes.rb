@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/backoffice', as: 'rails_admin'
-  #post 'watson' => 'watson#greeting'
+
   resources :leads
   resources :quotes , only: [:user_quotes, :new, :create]
   root to: 'static_pages#index'
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     password: 's',
     confirmation: 'v'
   }
-  #match '/watson' => 'watson#greeting', via: :get
+  match '/watson'     => 'watson#speak', via: :get
   get 'my_quotes' => 'quotes#user_quotes', as: :my_quotes
   get 'my_leads' => 'leads#user_leads', as: :my_leads
 end
