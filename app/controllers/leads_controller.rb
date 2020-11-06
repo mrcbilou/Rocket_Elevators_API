@@ -1,20 +1,23 @@
 require 'dropbox_sdk'
+require 'recaptcha/rails'
 
 class LeadsController < ApplicationController
     def user_leads
         @leads = Lead.where(:user_id => current_user.id)
     end
-
+    
+    
     def create
         @lead = Lead.new(lead_params)
         if user_signed_in?
             @lead.user_id = current_user.id
         end
-
+        
+        
         @lead.save
-
-        sendMail
-
+        
+        #sendMail
+        
         respond_to do |format|
             if @lead.save && user_signed_in?
                 format.html { redirect_to my_leads_path, notice: 'Your lead as been successfully registered !' }
@@ -25,7 +28,8 @@ class LeadsController < ApplicationController
             end
         end
     end
-
+    
+   
     def sendMail
         email = @lead.email
         full_name = @lead.full_name
