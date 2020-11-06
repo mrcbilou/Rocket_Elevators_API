@@ -234,7 +234,7 @@ The data of the new tables that we have created are created from the data alread
 	
  - SendGrid API
 	 - 
-	 - On the creation of a lead  (when it is saved) an email will be sent to the email address provided in the **Email** field of said Lead. Please provide a valid e-mail address to to receive the E-mail.
+	 - On the creation of a lead  (when it is saved) an email will be sent to the email address provided in the **Email** field of said Lead. Please provide a valid e-mail address to to receive the E-mail. For example : example@example.com
 		
  - DropBox API
 	 - 
