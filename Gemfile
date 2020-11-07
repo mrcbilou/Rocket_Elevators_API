@@ -55,7 +55,7 @@ gem 'cancancan', '~> 3.1'
 gem 'addressy', '~> 0.0.2'
 gem 'faker', '~> 2.14'
 
-gem 'figaro'
+
 
 gem 'gmaps4rails'
 gem "geocoder"
@@ -130,3 +130,5 @@ gem "slack-notifier"
 gem "zendesk_api"
 
 gem "sendgrid-ruby"
+
+gem "recaptcha", require: "recaptcha/rails"
