@@ -1,5 +1,5 @@
 class Building < ApplicationRecord
-  belongs_to :customer, optional: true
+  belongs_to :customer
   belongs_to :admin_contact, class_name: "Employee", optional: true
   belongs_to :technical_contact, class_name: "Employee", optional: true
 

@@ -1,7 +1,7 @@
 class Quote < ApplicationRecord
   belongs_to :user, optional: true
 
-  #after_create :new_quote_ticket
+  after_create :new_quote_ticket
 
   def new_quote_ticket
     client = ZendeskAPI::Client.new do |config|

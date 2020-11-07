@@ -3,8 +3,8 @@ class Customer < ApplicationRecord
   has_one :address, :dependent => :delete
   belongs_to :user
 
-  #after_create :dropbox
-  #after_update :dropbox
+  after_create :dropbox
+  after_update :dropbox
 
   def dropbox
     user = User.find(self.user_id)
