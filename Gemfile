@@ -131,4 +131,3 @@ gem "zendesk_api"
 
 gem "sendgrid-ruby"
 
-gem "recaptcha", require: "recaptcha/rails"
