@@ -6,7 +6,7 @@ The main goal of this week ...
 **Here is the information you must enter in the sign in page to access the BackOffice :**
  - user : `admin@admin.com`
  - password : `admin123`
-
+ - Loading the map might take a while !
 ## Members of the team week-4
 
 - **[William Sinclair](https://github.com/WilliamSinclairF)**
