@@ -5,153 +5,53 @@
 The main goal of this week ...
 
 **Here is the information you must enter in the sign in page to access the BackOffice :**
--  The site is only available in an **http connection** for now. 
-- It is also possible that your **browser tries to redirect you to a secure connection** so please make sure that you are 	in an **http only connection**.
+ - user : `admin@admin.com`
+ - password : `admin123`
+ - **Loading the map might take a while !**
+## Members of the team week-4
 
--   user :  `admin@admin.com`
--   password :  `admin123`
+- **[William Sinclair](https://github.com/WilliamSinclairF)**
 
-## [](https://github.com/ricoloic/Rocket_Elevators_API#members-of-the-team-week-4)Members of the team week-4
+- **[Frimina Zaddi](https://github.com/frimina)**
 
--   **[William Sinclair](https://github.com/WilliamSinclairF)**
-    
--   **[Frimina Zaddi](https://github.com/frimina)**
-    
--   **[Loïc Rico](https://github.com/ricoloic)**
-    
+- **[Loïc Rico](https://github.com/ricoloic)**
 
-## [](https://github.com/ricoloic/Rocket_Elevators_API#members-of-the-team-week-7)Members of the team week-7
+## Members of the team week-7
 
--   **[Loïc Rico](https://github.com/ricoloic)**
-    
--   **[Anthony Pageau](https://github.com/ricoloic)**
-    
--   **[Jean-Francois Taillefer](https://github.com/ricoloic)**
-    
--   **[Louis-Felix Beland](https://github.com/ricoloic)**
-    
+- **[Loïc Rico](https://github.com/ricoloic)**
 
-### [](https://github.com/ricoloic/Rocket_Elevators_API#the-repo--rocket-elevators-information-system)The Repo :  [Rocket Elevators Information System](https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System)
+- **[Anthony Pageau](https://github.com/ricoloic)**
 
-## [](https://github.com/ricoloic/Rocket_Elevators_API#utils)Utils
+- **[Jean-Francois Taillefer](https://github.com/ricoloic)**
 
--   [Rails](https://guides.rubyonrails.org/)
-    
--   [HTML5](https://www.w3schools.com/html/)
-    
--   [RUBY](https://www.ruby-lang.org/)
-    
--   [JavaScripts](https://www.javascript.com/)
-    
--   [CSS](https://css-tricks.com/)
-    
--   [Ubuntu](https://www.microsoft.com/en-ca/p/ubuntu-1804-lts/9n9tngvndl3q?activetab=pivot:overviewtab)
-    
+- **[Louis-Felix Beland](https://github.com/ricoloic)**
 
-## [](https://github.com/ricoloic/Rocket_Elevators_API#term)Term
 
--   [Gemfile](https://rubygems.org/)  - A format for describing gem dependencies for Ruby programs
-    
--   [Bundle](https://bundler.io/)  - Ruby Dependency Management
-    
--   [Migrations](https://edgeguides.rubyonrails.org/active_record_migrations.html)  - Convenient way to alter your database schema over time in a consistent way.
-    
--   [MySQL](https://www.mysql.com/)  - an open-source database management software that helps users store, organize, and later retrieve data
-    
+### The Repo : [Rocket Elevators Information System](https://github.com/WilliamSinclairF/Rocket_Elevators_Information_System)
 
-## [](https://github.com/ricoloic/Rocket_Elevators_API#how-to-use)How to use
+## Utils
 
-#### [](https://github.com/ricoloic/Rocket_Elevators_API#a-install-ruby-on-rails)A. Install Ruby on Rails
+- [Rails](https://guides.rubyonrails.org/)
 
--   Follow the instructions for installing Ruby on Rails depending on your operatiing system
-    
--   For Mac computer :  [OSx](https://gorails.com/setup/osx/10.15-catalina)
-    
--   For Ubuntu computer :  [Ubuntu](https://gorails.com/setup/ubuntu/18.04)
-    
--   For Windows computer :  [Windows](https://gorails.com/setup/windows/10)
-    
-    **The main installations that you will need to do in order for the program to run well**
-    
-    1.  Installing Homebrew
-    2.  Installing Ruby
-    3.  Configuring Git
-    4.  Installing Rails
-    5.  Setting Up A Database
-    6.  Installing and setting MySQL
-    7.  Installing and setting PostgreSQL
-    
-    **If you have any problems during installation, google is your best friend.**
-    
-    **Here is a list of forums that might help you :**
-    
-    1.  [StackOver-Flow](https://stackoverflow.com/)
-    2.  [Reddit](https://www.reddit.com/)
-    3.  [Ask Ubuntu](https://askubuntu.com/)
-    4.  [Mozilla](https://developer.mozilla.org/)
+- [HTML5](https://www.w3schools.com/html/)
 
-#### [](https://github.com/ricoloic/Rocket_Elevators_API#b-setting-up-databases)B. Setting up databases
+- [RUBY](https://www.ruby-lang.org/)
 
-> **When all the installation are done, you have to create a test application to validate that everything is set up correctly. If all goes well, the installation should end by displaying : Yay! You're on Rails! If so, you are now ready to run the program. Do not forget to visit the  [Rails official website](https://rubyonrails.org/)  if you want to understand some aspects of the program. When you download the program, make sure that the file  `config/database.yml`  is set correctly. If it's not the case. The program might show you some error when you lunch the server.**
+- [JavaScripts](https://www.javascript.com/)
 
--   Use this command to install the dependencies specified in your Gemfile :  **`bundle install`**
-    
-    Other Bundler command that can be useful :  [Bundler](https://bundler.io/bundle_install.html)  or  [StackOver-Flow](https://stackoverflow.com/questions/7304576/how-do-i-set-up-the-database-yml-file-in-rails)
-    
-    If you have error with the Bundler, this link can help you :  [Using Bundler To Install Gems](https://help.dreamhost.com/hc/en-us/articles/115001070131-Using-Bundler-to-install-Ruby-gems)
-    
-    Site where you can find some gems :  [Ruby Gems](https://guides.rubygems.org/rubygems-basics/)
-    
-    **Sometimes you have to run this command in order to reset your database**
-    
-    -   **`db:create`**  : creates the database
-    -   **`db:drop`**  : deletes the database
-    -   **`db:setup`**  : does db:create, db:schema:load, db:seed
-    -   **`db:reset`**  : does db:drop, db:setup
-    -   **`db:migrate`**  : reset does db:drop, db:create, db:migrate
-    -   **`db:seed`**  : use the file  **`db/seed`**  to populate the database
+- [CSS](https://css-tricks.com/)
 
-#### [](https://github.com/ricoloic/Rocket_Elevators_API#c-running-the-program)C. Running the program
+- [Ubuntu](https://www.microsoft.com/en-ca/p/ubuntu-1804-lts/9n9tngvndl3q?activetab=pivot:overviewtab)
 
-1.  Enter in the file of the program with :  **`cd file_name`**
-    
-2.  Make sure the all the migration are done with  **`rails db:migrate`**.
-    
-3.  Run the server with :  **`rails server`**
-    
+## Term
 
-#### [](https://github.com/ricoloic/Rocket_Elevators_API#d-exploring-the-rocket-elevator-website-)D. Exploring the Rocket Elevator Website  
+ - [Gemfile](https://rubygems.org/) - A format for describing gem dependencies for Ruby programs
 
-> **The main program of our website is on the quotes page. From this page, you can get a quote for the type of building you are looking for. We have three types of elevator to satisfy everyone. To do this, you must log in using the sign in button. After that, the information that you send to the program will enter in the database. This data will allow us to give you the best service according to your needs. Know that all your modifications as well as all your quotes are carefully saved and you can access them by going to your account.**
+ - [Bundle](https://bundler.io/) - Ruby Dependency Management
 
-#### [](https://github.com/ricoloic/Rocket_Elevators_API#e-acesss-to-our-code)E. Acesss to our code
+ - [Migrations](https://edgeguides.rubyonrails.org/active_record_migrations.html) - Convenient way to alter your database schema over time in a consistent way.
 
-Here is the most important folder and files that makes sure that our program runs well
-
--   **`app/views`**  : Most of our different html codes that make up the website. The files are a combination of HTML and Embedded Ruby
-    
--   **`db`**  Folder : All the database related files go inside this folder. The configuration, schema, and migration files can be found here, along with any seed files.
-    
--   **`app/models`**  : This folder make sure the you find a particular data that you're looking for, update that data and remove data.
-    
--   **`app/controllers`**  : This is where all the controller files go. Controllers are responsible for orchestrating the model and views.
-    
--   **`config/routes`**  : The rails router recognizes our different URLs and dispatches them to a controller's action
-    
--   **`config/database.yml`**  : This file holds all the database configuration the application needs. many different configurations can be set for different environments.
-    
--   **`config/environment.rb`**  : This file requires  **`application.rb`**  to initialize the Rails application.
-    
--   **`Gemfile`**  : The Gemfile is the place where all your app’s gem dependencies are declared.
-    
-    For more information about the rails directory structure, please visit this  [Site](https://www.sitepoint.com/a-quick-study-of-the-rails-directory-structure/)
-    
-
-#### [](https://github.com/ricoloic/Rocket_Elevators_API#f-our-different-database)F. Our different database
-
-> **For more control of the database, we suggest you to install  [MySQL](https://www.mysql.com/fr/products/workbench/)  workbench. It works almost with all operating system. To download the program, you must make sure that you have an account with oracle. If it's not the case, here is the link to  [Register](https://cutt.ly/Bgg9JBs)**
-> 
-> **You can also add it in a code editor like visual studio code or IntelliJ IDEA. These different programs allow you to modify database tables more easily. You can also see our database through the terminal. Depending on the computer, you must find the appropriate command to open MySQL.**
+ - [MySQL](https://www.mysql.com/) - an open-source database management software that helps users store, organize, and later retrieve data
 
 Here are examples of commands on MySQL :
 
