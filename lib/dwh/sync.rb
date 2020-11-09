@@ -6,15 +6,17 @@ module Dwh
         # gets the user from the quote in order to find the email associated with it
         user = User.find(q.user_id)
         # gets the customer from the quote to find it's company name
-        customer = Customer.find(user.id)
 
-        FactQuote.create!({
-          quote_id: q.id,
-          quote_created_at: q.created_at,
-          company_name: customer.company_name,
-          email: user.email,
-          elevator_number: q.elevator_number
-        })
+        if Customer.where(user_id: user.id).length > 0
+          customer = Customer.find(user.id)
+          FactQuote.create!({
+            quote_id: q.id,
+            quote_created_at: q.created_at,
+            company_name: customer.company_name,
+            email: user.email,
+            elevator_number: q.elevator_number
+          })
+        end
       end
     end
 
@@ -56,31 +58,62 @@ module Dwh
         battery = Battery.find(column.battery_id)
         building = Building.find(battery.building_id)
         address = Address.find(building.address_id)
-        customer = Customer.find(building.customer_id)
+
+        if Customer.where(id: building.customer_id).length > 0
+          customer = Customer.find(building.customer_id)
       
-        FactElevator.create!({
-          serial_number: e.serial_number,
-          date_of_commissioning: e.date_of_commissioning,
-          building_id: building.id,
-          customer_id: customer.id,
-          building_city: address.city
-        })
+          FactElevator.create!({
+            serial_number: e.serial_number,
+            date_of_commissioning: e.date_of_commissioning,
+            building_id: building.id,
+            customer_id: customer.id,
+            building_city: address.city
+          })
+        end
       end
     end
 
 
     def self.sync_fact_contacts 
       for u in User.all do
-        customer = Customer.find(u.id)
-        lead = Lead.find(u.id)
 
-        FactContact.create!({ 
-          contact_id: u.id,
-          creation_date: u.created_at,
-          company_name: customer.company_name,
-          email: u.email,
-          project_name: lead.project_name
-        })
+        if Customer.where(user_id: u.id).length > 0
+          customer = Customer.find(u.id)
+          lead = Lead.find(u.id)
+
+          FactContact.create!({ 
+            contact_id: u.id,
+            creation_date: u.created_at,
+            company_name: customer.company_name,
+            email: u.email,
+            project_name: lead.project_name
+          })
+        end
+      end
+    end
+
+
+    def self.sync_fact_interventions
+      for elev in Elevator.all do
+        if elev.elevator_status == 'Intervention'
+          col = Column.find(elev.column_id)
+          bat = Battery.find(col.battery_id)
+          build = Building.find(bat.building_id)
+          employee = Employee.find(build.technical_contact_id)
+
+          FactIntervention.create!({ 
+            employee_id: employee.id,
+            building_id: build.id,
+            battery_id: bat.id,
+            column_id: col.id,
+            elevator_id: elev.id,
+            start_intervention: elev.date_of_commissioning,
+            end_intervention: elev.date_of_commissioning,
+            result: ['Success', 'Incomplete', 'Failure'].sample,
+            report: Faker::Lorem.sentence(word_count: rand(3..12).floor),
+            status: ['Pending', 'InProgress', 'Interrupted', 'Resumed', 'Complete'].sample
+          })
+        end
       end
     end
   end

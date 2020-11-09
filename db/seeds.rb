@@ -23,8 +23,8 @@ Elevator.destroy_all
 
 DatabaseCleaner.clean_with(:truncation)
 
-randCustomerCreation = 100
-randEmployeeCreation = 21
+randCustomerCreation = 10
+randEmployeeCreation = 1
 
 def seed_image
     File.open(File.join(Rails.root, "/app/assets/images/noYou/image.png"))
@@ -318,7 +318,7 @@ def create_customer randCustomerCreation
                         serial_number: Faker::IDNumber.invalid,
                         elevator_model: ["Elevatroma", "911-Elevator", "Elevator-Bee" , "Daily-Elevator"].sample,
                         elevator_type: tmp_battery.battery_type,
-                        elevator_status: "ACTIVE",
+                        elevator_status: ["ACTIVE", "Intervention", "Inactive"].sample,
                         date_of_commissioning: tmp_battery.date_of_commissioning,
                         date_of_last_inspection: tmp_battery.date_of_last_inspection,
                         certificate_of_inspection: ["Rocket TMP", "General"].sample,

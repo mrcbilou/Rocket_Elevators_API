@@ -32,7 +32,10 @@
         <div class="actions d-flex justify-content-center">
           <%= f.submit "Log in", class: "btn btn-red btn-block w-20p" %> <br />
         </div>
-        
+        <div class="field">
+          <%= flash[:recaptcha_error] %>
+	        <%= recaptcha_tags %>
+        </div>
       </form>
     <% end %>
     <div class="mt-40">

@@ -11,5 +11,19 @@ class CreateDimCustomer < ActiveRecord::Migration[5.2]
 
       t.timestamps
     end
+
+    create_table :fact_interventions do |t|
+      t.integer :employee_id
+      t.integer :building_id
+      t.integer :battery_id
+      t.integer :column_id
+      t.integer :elevator_id
+      t.date :start_intervention
+      t.date :end_intervention
+      t.string :result
+      t.string :report
+      t.string :status
+      t.timestamps
+    end
   end
 end

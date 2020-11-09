@@ -119,6 +119,7 @@ group :production do
   # or :staging or :beta or whatever environments you are using cloudflare in.
   # you probably don't want this for :test or :development
 end
+
 gem 'google_maps_service'
 gem "figaro"
 
@@ -131,3 +132,4 @@ gem "zendesk_api"
 
 gem "sendgrid-ruby"
 
+gem "recaptcha", require: "recaptcha/rails" 

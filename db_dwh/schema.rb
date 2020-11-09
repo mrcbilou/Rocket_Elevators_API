@@ -46,6 +46,21 @@ ActiveRecord::Schema.define(version: 2020_10_20_174845) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "fact_interventions", force: :cascade do |t|
+    t.integer "employee_id"
+    t.integer "building_id"
+    t.integer "battery_id"
+    t.integer "column_id"
+    t.integer "elevator_id"
+    t.date "start_intervention"
+    t.date "end_intervention"
+    t.string "result"
+    t.string "report"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "fact_quotes", force: :cascade do |t|
     t.integer "quote_id"
     t.datetime "quote_created_at"
