@@ -8,7 +8,7 @@ module Dwh
         # gets the customer from the quote to find it's company name
 
         if Customer.where(user_id: user.id).length > 0
-          customer = Customer.find(user.id)
+          customer = Customer.where(user_id: user.id)[0]
           FactQuote.create!({
             quote_id: q.id,
             quote_created_at: q.created_at,
@@ -37,16 +37,18 @@ module Dwh
             end
           end
         end
-        city = Address.find(c.address_id).city
+        if Address.where(customer_id: c.address_id).length > 0
+          city = Address.where(customer_id: c.address_id)[0].city
 
-        DimCustomer.create!({
-          customer_creation_date: c.created_at,
-          company_name: c.company_name,
-          company_contact_full_name: c.company_contact_full_name,
-          company_contact_email: c.company_contact_email,
-          elevator_number: elevator_number,
-          customer_city: city
-        })
+          DimCustomer.create!({
+            customer_creation_date: c.created_at,
+            company_name: c.company_name,
+            company_contact_full_name: c.company_contact_full_name,
+            company_contact_email: c.company_contact_email,
+            elevator_number: elevator_number,
+            customer_city: city
+          })
+        end
       end
     end
 
@@ -57,10 +59,10 @@ module Dwh
         column = Column.find(e.column_id)
         battery = Battery.find(column.battery_id)
         building = Building.find(battery.building_id)
-        address = Address.find(building.address_id)
-
-        if Customer.where(id: building.customer_id).length > 0
+        
+        if Customer.where(id: building.customer_id).length > 0 && Address.where(building_id: building.address_id).length > 0
           customer = Customer.find(building.customer_id)
+          address = Address.find(building.address_id)
       
           FactElevator.create!({
             serial_number: e.serial_number,
@@ -77,9 +79,9 @@ module Dwh
     def self.sync_fact_contacts 
       for u in User.all do
 
-        if Customer.where(user_id: u.id).length > 0
-          customer = Customer.find(u.id)
-          lead = Lead.find(u.id)
+        if Customer.where(user_id: u.id).length > 0 && Lead.where(user_id: u.id).length > 0
+          customer = Customer.where(user_id: u.id)[0]
+          lead = Lead.where(user_id: u.id)[0]
 
           FactContact.create!({ 
             contact_id: u.id,
@@ -101,17 +103,29 @@ module Dwh
           build = Building.find(bat.building_id)
           employee = Employee.find(build.technical_contact_id)
 
+          start = elev.date_of_commissioning
+          stop = ["", Time.now].sample
+
+          if stop != ''
+            result = 'Success'
+            status = 'Complete'
+          else
+            result = ['Incomplete', 'Failure'].sample
+            status = ['Pending', 'InProgress', 'Interrupted', 'Resumed'].sample
+          end
+
+
           FactIntervention.create!({ 
             employee_id: employee.id,
             building_id: build.id,
             battery_id: bat.id,
             column_id: col.id,
             elevator_id: elev.id,
-            start_intervention: elev.date_of_commissioning,
-            end_intervention: elev.date_of_commissioning,
-            result: ['Success', 'Incomplete', 'Failure'].sample,
-            report: Faker::Lorem.sentence(word_count: rand(3..12).floor),
-            status: ['Pending', 'InProgress', 'Interrupted', 'Resumed', 'Complete'].sample
+            start_intervention: start,
+            end_intervention: stop,
+            result: result,
+            status: status,
+            report: Faker::Lorem.sentence(word_count: rand(3..12).floor)
           })
         end
       end

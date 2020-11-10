@@ -10,13 +10,13 @@ namespace :dwh do
     pp 'done clearing tables'
 
     Dwh::Sync.sync_fact_interventions
-    
+
     Dwh::Sync.sync_fact_quotes
-    
+
     Dwh::Sync.sync_dim_customers
-    
+
     Dwh::Sync.sync_fact_contacts
-    
+
     Dwh::Sync.sync_fact_elevators
   end
 end
