@@ -6,10 +6,10 @@ namespace :dwh do
     Second::Base.connection.execute('TRUNCATE fact_quotes RESTART IDENTITY')
     Second::Base.connection.execute('TRUNCATE fact_contacts RESTART IDENTITY')
     Second::Base.connection.execute('TRUNCATE fact_elevators RESTART IDENTITY')
-    Second::Base.connection.execute('TRUNCATE fact_interventions RESTART IDENTITY')
-    pp 'done clearing tables'
+    # Second::Base.connection.execute('TRUNCATE fact_interventions RESTART IDENTITY')
+    # pp 'done clearing tables'
 
-    Dwh::Sync.sync_fact_interventions
+    # Dwh::Sync.sync_fact_interventions
 
     Dwh::Sync.sync_fact_quotes
 
