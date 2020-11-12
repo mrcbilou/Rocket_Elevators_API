@@ -33,7 +33,12 @@ module Types
     end
 
     # /interventions
-    field :interventions, [Types::FactInterventionType], null: true
+    field :interventions, [Types::FactInterventionType], null: true 
+    # do
+    #   resolve(args, err,info){
+    #     FactIntervention.all
+    #   }
+    # end
 
     def interventions
       FactIntervention.all
@@ -53,6 +58,7 @@ module Types
 
     def buildings
       Building.all
+      Customer.all
     end
 
     field :building, Types::BuildingType, null: false do
