@@ -14,14 +14,35 @@ module Types
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     field :address_id, Integer, null: true
 
-    ## EXAMPLE for adding relation to a type
+    # # EXAMPLE
     #
-    # field :<the name of the field to be added (this can be anything, make sure to keep it simple)>, <if you want multiple "thing" [Types::<ThingType>] || if you want a single "thing" Types::<ThingType>>, null: <<true> || <false>>
+    # <Example> reference the name of the Class in the './app/models/exemple.rb' file ;
+    # <Example>.all will resorte by giving you an array of object of all the row of the table related to this './app/models/exemple.rb' model ;
+    # <Example>.where() # .where documentation { https://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-where } really nice example ;
+    # <Example>.where() # and the .where return an array ;
+    # <Example>.where() # .where has no problem with a bad response like the (err) => {...} but this one does ↓↓↓↓↓↓↓↓↓↓↓ ;
+    # <Example>.find() # you also have some other option for finding a other type by its id .find ;
+    # <Example>.find() # Cons:
+    # <Example>.find() # the request return an (err) if not capable of finding the id provided ;
+    # <Example>.find() # Pros:
+    # <Example>.find() # does not return an array and only return one object ;
     #
-    # The function to get the "thing"
-    # def <same as the name of the field previously describe>
-    #   Example.where(example: object(this "object" would be the result/return of one of the fields for the type you are in).<field wanted>)!the function return an array be carefull if needed look in the other files for reference! => refer to documentation provided in discord #notes-et-ressources  https://discord.com/channels/772095972218110013/772095972218110016/776349053419520031
+    # <example> can be a custom name but normaly you keep it the same but lower case and if you return more than one object you make it plural ;
+    # <exemple> will be the name you'll see in the GraphiQL interface on the http://localhost:3000/graphiql/ ;
+    #
+    # field :<example>, Types::<ExampleType>, null: true
+    # 
+    # def <exemple> # same as field name ;
+    #   <Example>.find()  
     # end
+    # 
+    # field :<exemple<plural version>>, [Types::<ExempleType>], null: true # null: <<true> || <false>   not sure but, i think this is if you want to make optional the possibility of returning something 'null'
+    # 
+    # def <example<plural version>>
+    #   <Example>.all();
+    #   <Example>.where( <columnName>: object.<valueVar> ); # more at :  https://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-where
+    # end
+    ## END
 
     # /user
     field :user, Types::UserType, null: true

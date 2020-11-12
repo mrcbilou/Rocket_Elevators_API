@@ -32,20 +32,24 @@ module Types
     end
 
 
-    ## EXAMPLE : for custom query, this wont work it is just an example
-    #
-    # !!! are optional, only use if searching for a particular "thing"
-    #
-    # name of the query that will be perform (this is customisable)
-    # /customQuery
-    # field :<customQueryName>(!!!<thing>:!!!), <the type of data that the query will return (a string should be good)>, null: <<true> || <false> (not sure but, i think this is if you want to make optional the possibility of returning something 'null')> !!!do!!!
-    #   !!!argument :<thing>, <the type of the "thing">, required: <<true> || <false>>
+    # EXAMPLE START #
+
+    # /users
+    # field :users, [Types::UserType], null: false
+    # 
+    # def users
+    #   User.all
     # end
-    #
-    # the method where the query take place :
-    # def <customQueryName>
-    #   <SqlTableName (refer to the name in the './app/models/example.rb' at first line)>.where(<see the documentation in 'notes-et-ressources' on discord for more info>)
+    
+    # /user(id:)
+    # field :user, Types::UserType, null: false do
+    #   argument :id, ID, required: true
     # end
-    ##
+    # 
+    # def user(id:)
+    #   User.find(id)
+    # end
+    
+    # EXAMPLE END #
   end
 end
