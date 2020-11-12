@@ -47,6 +47,53 @@ module Types
       FactIntervention.find(id)
     end
 
+    #/ buildings
+
+    field :buildings, [Types::BuildingType], null: true
+
+    def buildings
+      Building.all
+    end
+
+    field :building, Types::BuildingType, null: false do
+      argument :id, ID, required: true
+    end
+
+    def building(id:)
+      Building.find(id)
+    end
+
+    
+    #/ customers
+
+    field :customers, [Types::CustomerType], null: true
+
+    def customers
+      Customer.all
+    end
+
+    field :customer, Types::CustomerType, null: false do
+      argument :id, ID, required: true
+    end
+
+    def customer(id:)
+      Customer.find(id)
+    end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     # EXAMPLE START #
 
