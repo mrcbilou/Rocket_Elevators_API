@@ -31,7 +31,6 @@ gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'actionpack-cloudflare'
 
 gem 'graphql'
-gem 'graphiql-rails'
 
 #Dropbox
 gem 'dropbox_api'
@@ -137,3 +136,4 @@ gem "sendgrid-ruby"
 
 gem "recaptcha", require: "recaptcha/rails" 
 gem 'graphiql-rails', group: :development
+gem 'graphql-preload'

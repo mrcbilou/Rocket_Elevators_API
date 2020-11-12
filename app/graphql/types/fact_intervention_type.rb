@@ -13,5 +13,19 @@ module Types
     field :status, String, null: true
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+
+    # /building
+    field :building, Types::BuildingType, null: true
+
+    def building
+      Building.where(id: object.building_id)[0]
+    end
+
+    # /employee
+    field :employee, Types::EmployeeType, null: true
+
+    def employee
+      Employee.where(id: object.employee_id)[0]
+    end
   end
 end

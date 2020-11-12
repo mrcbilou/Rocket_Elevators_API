@@ -172,6 +172,14 @@ GEM
       railties
       sprockets-rails
     graphql (1.11.6)
+    graphql-batch (0.4.3)
+      graphql (>= 1.3, < 2)
+      promise.rb (~> 0.7.2)
+    graphql-preload (2.1.0)
+      activerecord (>= 4.1, < 6)
+      graphql (>= 1.8, < 2)
+      graphql-batch (~> 0.3)
+      promise.rb (~> 0.7)
     groupdate (5.2.1)
       activesupport (>= 5)
     haml (5.2.0)
@@ -280,6 +288,7 @@ GEM
       omniauth (~> 1.2)
     orm_adapter (0.5.0)
     pg (0.21.0)
+    promise.rb (0.7.4)
     public_suffix (4.0.6)
     puma (3.12.6)
     rack (2.2.3)
@@ -466,6 +475,7 @@ DEPENDENCIES
   google_maps_service
   graphiql-rails
   graphql
+  graphql-preload
   groupdate (~> 5.2, >= 5.2.1)
   ibm_watson
   jbuilder (~> 2.5)
