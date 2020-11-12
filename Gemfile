@@ -30,9 +30,6 @@ gem "audited", github: "collectiveidea/audited"
 gem 'sprockets-rails', :require => 'sprockets/railtie'
 gem 'actionpack-cloudflare'
 
-gem 'graphql'
-gem 'graphiql-rails'
-
 #Dropbox
 gem 'dropbox_api'
 gem 'omniauth'

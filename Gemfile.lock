@@ -168,10 +168,6 @@ GEM
       hurley (~> 0.1)
       multi_json (~> 1.11)
       retriable (~> 2.0)
-    graphiql-rails (1.7.0)
-      railties
-      sprockets-rails
-    graphql (1.11.6)
     groupdate (5.2.1)
       activesupport (>= 5)
     haml (5.2.0)
@@ -464,8 +460,6 @@ DEPENDENCIES
   geocoder
   gmaps4rails
   google_maps_service
-  graphiql-rails
-  graphql
   groupdate (~> 5.2, >= 5.2.1)
   ibm_watson
   jbuilder (~> 2.5)

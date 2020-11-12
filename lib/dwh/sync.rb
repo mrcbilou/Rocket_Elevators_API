@@ -104,7 +104,7 @@ module Dwh
           employee = Employee.find(build.technical_contact_id)
 
           start = elev.date_of_commissioning
-          stop = ["", Time.now].sample
+          stop = ["", Faker::Date.between(from: elev.date_of_commissioning, to: '2020-12-10')].sample
 
           if stop != ''
             result = 'Success'

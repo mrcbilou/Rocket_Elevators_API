@@ -211,7 +211,7 @@ def create_customer randCustomerCreation
             last_name: Faker::Name.unique.last_name,
             email: Faker::Internet.unique.email,
             title: Faker::Games::Overwatch.hero,
-            created_at: Time.at((Time.local(2017, 7, 8).to_f - Time.local(2020, 7, 8).to_f)*rand + Time.local(2020, 7, 8).to_f),
+            created_at: Faker::Date.between(from: '2017-12-20', to: '2020-11-8'), #=> #<Date: 2014-09-24>
             password: Faker::Internet.unique.password
         )
 
@@ -254,11 +254,10 @@ def create_customer randCustomerCreation
             department: ["Elevator Consultant", "Building Manager", "Architect"].sample,
             project_description: Faker::Lorem.paragraph(sentence_count: 5),
             message: Faker::Lorem.paragraph(sentence_count: 5),
-            #attachment: seed_image,
-            created_at: Time.at((tmp_user.created_at.to_f - Time.local(2020, 7, 8).to_f)*rand + Time.local(2020, 7, 8).to_f)
+            created_at: Faker::Date.between(from: tmp_user.created_at, to: '2020-11-9') #=> #<Date: 2014-09-24>
         )
 
-        for j in 1..rand(1..4) do
+        if rand(1..4) == 1
             tmp_building_address = Address.create(
                 type_of_address: ["House", "Apartment", "Commercial", "Corporate", "Hybrid"].sample,
                 status: ["Active", "Inactive"].sample,
@@ -269,7 +268,7 @@ def create_customer randCustomerCreation
                 postal_code: addressy[1].zip,
                 country: "USA",
                 notes: Faker::Lorem.sentence(word_count: rand(3..9).floor),
-                created_at: Time.at((tmp_user.created_at.to_f - Time.local(2020, 7, 8).to_f)*rand + Time.local(2020, 7, 8).to_f)
+                created_at: Faker::Date.between(from: tmp_user.created_at, to: '2020-11-9') #=> #<Date: 2014-09-24>
             )
 
             tmp_building = Building.create(
@@ -292,24 +291,96 @@ def create_customer randCustomerCreation
             tmp_battery = Battery.create(
                 building_id: tmp_building.id,
                 battery_type: ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
-                battery_status: "ACTIVE",
+                battery_status: ["ACTIVE", "Inactive"].sample,
                 date_of_commissioning: Time.at((tmp_user.created_at.to_f - Time.local(2018, 7, 8).to_f)*rand + Time.local(2018, 7, 8).to_f),
                 date_of_last_inspection: Time.at((tmp_building.created_at.to_f - Time.local(2020, 7, 8).to_f)*rand + Time.local(2020, 7, 8).to_f),
                 certificate_of_operations: "NYC buildings",
                 information: Faker::Lorem.sentence(word_count: 6),
                 notes: Faker::Lorem.sentence(word_count: rand(3..12).floor),
-                created_at: Time.at((tmp_building.created_at.to_f - Time.local(2020, 7, 8).to_f)*rand + Time.local(2020, 7, 8).to_f)
+                created_at: Faker::Date.between(from: tmp_building.created_at, to: '2020-11-10') #=> #<Date: 2014-09-24>
             )
 
             for g in 1..rand(1..6) do
                 tmp_column = Column.create(
                     battery_id: tmp_battery.id,
                     column_type: tmp_battery.battery_type,
-                    column_status: tmp_battery.battery_status,
+                    column_status: ["ACTIVE", "Inactive"].sample,
                     number_of_floors_served: rand(2..50).floor,
                     information: Faker::Lorem.sentence(word_count: rand(3..12).floor),
                     notes: Faker::Lorem.sentence(word_count: rand(3..12).floor),
-                    created_at: tmp_building.created_at
+                    created_at: Faker::Date.between(from: tmp_battery.created_at, to: '2020-11-11') #=> #<Date: 2014-09-24>
+                )
+
+                for z in 1..rand(1..6) do
+                    tmp_elevator = Elevator.create(
+                        column_id: tmp_column.id,
+                        serial_number: Faker::IDNumber.invalid,
+                        elevator_model: ["Elevatroma", "911-Elevator", "Elevator-Bee" , "Daily-Elevator"].sample,
+                        elevator_type: tmp_battery.battery_type,
+                        elevator_status: ["ACTIVE", "Inactive"].sample,
+                        date_of_commissioning: tmp_battery.date_of_commissioning,
+                        date_of_last_inspection: tmp_battery.date_of_last_inspection,
+                        certificate_of_inspection: ["Rocket TMP", "General"].sample,
+                        information: Faker::Lorem.sentence(word_count: rand(3..12).floor),
+                        notes: Faker::Lorem.sentence(word_count: rand(3..12).floor),
+                        created_at: Faker::Date.between(from: tmp_column.created_at, to: '2020-11-12') #=> #<Date: 2014-09-24>
+                    )
+                end
+            end
+        end
+
+        for j in 1..rand(1..4) do
+            tmp_building_address = Address.create(
+                type_of_address: ["House", "Apartment", "Commercial", "Corporate", "Hybrid"].sample,
+                status: ["Active", "Inactive"].sample,
+                entity: "Building",
+                number_and_street: addressy[1].street,
+                suite_or_apartment: addressy[1].street.split(" ")[0],
+                city: addressy[1].city,
+                postal_code: addressy[1].zip,
+                country: "USA",
+                notes: Faker::Lorem.sentence(word_count: rand(3..9).floor),
+                created_at: Faker::Date.between(from: tmp_user.created_at, to: '2020-11-9') #=> #<Date: 2014-09-24>
+            )
+
+            tmp_building = Building.create(
+                address_id: tmp_building_address.id,
+                customer_id: tmp_customer.id,
+                created_at: tmp_building_address.created_at
+            )
+
+            tmp_building_address.update('building_id' => tmp_building.id)
+
+            tmp_building_detail = BuildingDetail.create(
+                building_id: tmp_building.id,
+                information_key: Faker::Lorem.sentence(word_count: rand(3..9).floor),
+                value: Faker::Lorem.sentence(word_count: rand(3..9).floor),
+                created_at: tmp_building.created_at
+            )
+
+            tmp_building.update_attributes(building_detail_id: tmp_building_detail.id)
+
+            tmp_battery = Battery.create(
+                building_id: tmp_building.id,
+                battery_type: ["Residential", "Commercial", "Corporate", "Hybrid"].sample,
+                battery_status: ["ACTIVE", "Intervention", "Inactive"].sample,
+                date_of_commissioning: Time.at((tmp_user.created_at.to_f - Time.local(2018, 7, 8).to_f)*rand + Time.local(2018, 7, 8).to_f),
+                date_of_last_inspection: Time.at((tmp_building.created_at.to_f - Time.local(2020, 7, 8).to_f)*rand + Time.local(2020, 7, 8).to_f),
+                certificate_of_operations: "NYC buildings",
+                information: Faker::Lorem.sentence(word_count: 6),
+                notes: Faker::Lorem.sentence(word_count: rand(3..12).floor),
+                created_at: Faker::Date.between(from: tmp_building.created_at, to: '2020-11-10') #=> #<Date: 2014-09-24>
+            )
+
+            for g in 1..rand(1..6) do
+                tmp_column = Column.create(
+                    battery_id: tmp_battery.id,
+                    column_type: tmp_battery.battery_type,
+                    column_status: ["ACTIVE", "Intervention", "Inactive"].sample,
+                    number_of_floors_served: rand(2..50).floor,
+                    information: Faker::Lorem.sentence(word_count: rand(3..12).floor),
+                    notes: Faker::Lorem.sentence(word_count: rand(3..12).floor),
+                    created_at: Faker::Date.between(from: tmp_battery.created_at, to: '2020-11-11') #=> #<Date: 2014-09-24>
                 )
 
                 for z in 1..rand(1..6) do
@@ -324,11 +395,13 @@ def create_customer randCustomerCreation
                         certificate_of_inspection: ["Rocket TMP", "General"].sample,
                         information: Faker::Lorem.sentence(word_count: rand(3..12).floor),
                         notes: Faker::Lorem.sentence(word_count: rand(3..12).floor),
-                        created_at: tmp_column.created_at
+                        created_at: Faker::Date.between(from: tmp_column.created_at, to: '2020-11-12') #=> #<Date: 2014-09-24>
                     )
                 end
             end
         end
+
+
 
         for j in 1..rand(1..4) do
             tmp_quote = Quote.create(
