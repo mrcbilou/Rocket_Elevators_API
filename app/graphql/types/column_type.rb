@@ -9,5 +9,12 @@ module Types
     field :notes, String, null: true
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+
+    #/battery
+    field :battery, Types::BatteryType, null: true
+
+    def battery
+      Battery.where(id: object.battery_id)[0]
+    end
   end
 end

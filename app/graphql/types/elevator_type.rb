@@ -13,5 +13,12 @@ module Types
     field :notes, String, null: true
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+ 
+    #/column
+    field :column, Types::ColumnType, null: true
+
+    def column
+      Column.where(id: object.column_id)[0]
+    end
   end
 end

@@ -24,11 +24,27 @@ module Types
       Employee.all
     end
 
+    field :employee, Types::EmployeeType, null: false do
+      argument :id, ID, required: true
+    end
+
+    def employee(id:)
+      Employee.find(id)
+    end
+
     # /interventions
     field :interventions, [Types::FactInterventionType], null: true
 
     def interventions
       FactIntervention.all
+    end
+
+    field :intervention, Types::FactInterventionType, null: false do
+      argument :id, ID, required: true
+    end
+
+    def intervention(id:)
+      FactIntervention.find(id)
     end
 
 

@@ -6,5 +6,12 @@ module Types
     field :value, String, null: true
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
+  
+  
+    field :building, Types::BuildingType, null: true
+
+    def building
+      Building.where(id: object.building_id)[0]
+    end
   end
 end
