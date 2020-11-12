@@ -24,3 +24,5 @@
 //= link demo.revolution_slider.js
 //= link quote.js
 //= link rails_admin/custom/ui.js
+//= link graphiql/rails/application.css
+//= link graphiql/rails/application.js

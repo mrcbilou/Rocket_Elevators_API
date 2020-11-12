@@ -136,3 +136,4 @@ gem "zendesk_api"
 gem "sendgrid-ruby"
 
 gem "recaptcha", require: "recaptcha/rails" 
+gem 'graphiql-rails', group: :development
