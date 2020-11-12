@@ -14,13 +14,13 @@ module Types
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     field :address_id, Integer, null: true
 
-    ## MMMMM those are some good comments you got there boiii, Sweet! I'm telling you #
+    ## MMMMM those are some goooooood comments you got there boiii !!! #
 
     # Description #
     #
     # <Example> reference the name of the Class in the './app/models/exemple.rb' file ;
     # <Example>.all will resorte by giving you an array of object of all the row of the table related to this './app/models/exemple.rb' model ;
-    # <Example>.where() .where documentation { https://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-where } really nice example ;
+    # <Example>.where() .where documentation { https://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-where } really nice examples over there ;
     # <Example>.where() and the .where return an array ;
     # <Example>.where() .where has no problem with a bad response like the (err) => {...} but this one does ↓↓↓↓↓↓↓↓↓↓↓ ;
     # <Example>.find() you also have some other option for finding a other type by its id .find ;
@@ -48,6 +48,7 @@ module Types
     #
     # def <example<plural version>>
     #   <Example>.all();
+    # #      OR
     #   <Example>.where( <columnName>: object.<valueVar> ); # more at :  https://api.rubyonrails.org/classes/ActiveRecord/QueryMethods.html#method-i-where
     # end
     #
