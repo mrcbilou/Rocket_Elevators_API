@@ -1,7 +1,7 @@
 class Quote < ApplicationRecord
   belongs_to :user, optional: true
 
-  after_create :new_quote_ticket
+  # after_create :new_quote_ticket
 
   def new_quote_ticket
     client = ZendeskAPI::Client.new do |config|
@@ -10,7 +10,7 @@ class Quote < ApplicationRecord
       config.token = ENV['ZENDESK_TOKEN']
     end
 
-    # user = User.find(self.user_id)
+    user = User.find(self.user_id)
 
     ZendeskAPI::Ticket.create!(client,
     :subject => "New quote request from #{user.first_name}",
