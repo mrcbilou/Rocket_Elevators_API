@@ -27,5 +27,14 @@ module Types
     def employee
       Employee.where(id: object.employee_id)[0]
     end
+    
+    # /address
+    field :address, Types::AddressType, null: true
+
+    def address
+      Address.where(id: object.building_id)[0]
+    end
+
+
   end
 end

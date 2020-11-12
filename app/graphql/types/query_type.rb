@@ -80,19 +80,21 @@ module Types
       Customer.find(id)
     end
 
+    #/ Adresses
 
+    field :addresses, [Types::AddressType], null: true
 
+    def addresses
+      Address.all
+    end
 
+    field :address, Types::AddressType, null: false do
+      argument :id, ID, required: true
+    end
 
-
-
-
-
-
-
-
-
-
+    def address(id:)
+      Address.find(id)
+    end
 
 
     # EXAMPLE START #
