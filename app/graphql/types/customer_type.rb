@@ -13,5 +13,12 @@ module Types
     field :created_at, GraphQL::Types::ISO8601DateTime, null: false
     field :updated_at, GraphQL::Types::ISO8601DateTime, null: false
     field :address_id, Integer, null: true
+
+    # /user
+    field :user, Types::UserType, null: true
+
+    def user
+      User.where(id: object.user_id)[0]
+    end
   end
 end
