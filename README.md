@@ -73,6 +73,7 @@ We have build a data warehouse to analyze the facts of the business. Here are th
 -   FactContact
 -   FactElevator
 -   DimCustomers
+- FactInterventions (added week8)
 
 You can find all the settings on  **`db_dwh/schema.rb`**
 
@@ -81,6 +82,7 @@ We need to build a data warehouse to analyze the facts of the business, so we ha
 -   Quote Requests
 -   Contact requests
 -   Commissioning of elevators
+- FactInterventions (added week8)
 
 These data allow us to answer three main questions:
 
@@ -104,7 +106,8 @@ The data of the new tables that we have created are created from the data alread
 
 ## [](https://github.com/ricoloic/Rocket_Elevators_API#schema)[Schema](https://dbdiagram.io/d/5f92e1423a78976d7b78e81d)
 
-[![hustlin_erd](https://camo.githubusercontent.com/599b5a1432b3e8d61d7578c11d1d88c416f265ed8e7ff72115361becef9f60b1/68747470733a2f2f692e696d6775722e636f6d2f4e5463665961762e706e67)](https://camo.githubusercontent.com/599b5a1432b3e8d61d7578c11d1d88c416f265ed8e7ff72115361becef9f60b1/68747470733a2f2f692e696d6775722e636f6d2f4e5463665961762e706e67)
+[![hustlin_erd](https://i.imgur.com/qki9Kjw.png)](https://i.imgur.com/qki9Kjw.png)
+This is an updated version on our tables diagram from week 8
 
 
 
