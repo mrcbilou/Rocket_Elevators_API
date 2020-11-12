@@ -54,6 +54,12 @@ module Types
     #
     # # EXAMPLE END #
 
+    field :first_name, String, null: true
+    
+    def first_name # same as field name ;
+      User.where(id: object.user_id)[0].first_name
+    end
+
     # /user
     field :user, Types::UserType, null: true
 

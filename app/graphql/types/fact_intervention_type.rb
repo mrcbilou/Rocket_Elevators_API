@@ -34,7 +34,5 @@ module Types
     def address
       Address.where(id: object.building_id)[0]
     end
-
-
   end
 end

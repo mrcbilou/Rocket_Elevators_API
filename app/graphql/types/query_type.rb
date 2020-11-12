@@ -33,16 +33,15 @@ module Types
     end
 
     # /interventions
-    field :interventions, [Types::FactInterventionType], null: true 
-    # do
+    # field :interventions, [Types::FactInterventionType], null: true do
     #   resolve(args, err,info){
     #     FactIntervention.all
     #   }
     # end
 
-    def interventions
-      FactIntervention.all
-    end
+    # def interventions
+    #   FactIntervention.all
+    # end
 
     field :intervention, Types::FactInterventionType, null: false do
       argument :id, ID, required: true
@@ -52,13 +51,13 @@ module Types
       FactIntervention.find(id)
     end
 
+
     #/ buildings
 
     field :buildings, [Types::BuildingType], null: true
 
     def buildings
       Building.all
-      Customer.all
     end
 
     field :building, Types::BuildingType, null: false do
@@ -120,7 +119,7 @@ module Types
     # def user(id:)
     #   User.find(id)
     # end
-    
+
     # EXAMPLE END #
   end
 end
