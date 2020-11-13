@@ -1,0 +1,270 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Offer Services on the Internet",
+		"_postman_id": "81a8c751-ab6c-211c-a6df-5412e084c8eb",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Rest_API",
+			"description": "",
+			"item": [
+				{
+					"name": "1.Retrieving the current status of a specific Battery",
+					"request": {
+						"url": "https://rocketrestapi.azurewebsites.net/api/Battery/1",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "2.Changing the status of a specific Battery",
+					"request": {
+						"url": "https://rocketrestapi.azurewebsites.net/api/Battery/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"battery_status\": \"ACTIVE\" }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "3.Retrieving the current status of a specific Column",
+					"request": {
+						"url": "https://rocketrestapi.azurewebsites.net/api/Column/1",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "4.Changing the status of a specific Column",
+					"request": {
+						"url": "https://rocketrestapi.azurewebsites.net/api/Column/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"column_status\": \"Inactive\" }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "5.Changing the status of a specific Elevator",
+					"request": {
+						"url": "https://rocketrestapi.azurewebsites.net/api/Elevator/1",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "6.Changing the status of a specific Elevator",
+					"request": {
+						"url": "https://rocketrestapi.azurewebsites.net/api/Elevator/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"elevator_status\": \"Intervention\" }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "7.Retrieving a list of Elevators that are not in operation at the time of the request",
+					"request": {
+						"url": "https://rocketrestapi.azurewebsites.net/api/Elevator",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "8.Retrieving a list of Buildings that contain at least one battery, column or elevator requiring intervention",
+					"request": {
+						"url": "https://rocketrestapi.azurewebsites.net/api/Building",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "9.Retrieving a list of Leads created in the last 30 days who have not yet become customers",
+					"request": {
+						"url": "https://rocketrestapi.azurewebsites.net/api/Lead",
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GraphQL",
+			"description": "",
+			"item": [
+				{
+					"name": "Retrieving the address of the building, the beginning and the end of the intervention for a specific intervention.",
+					"request": {
+						"url": "https://rails-api-graphql.herokuapp.com/graphql",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\":  \"query { intervention(id: 14) { interventionInfo address { addressInfo } } }\"\r\n}"
+						},
+						"description": "Retrieving the address of the building, the beginning and the end of the intervention for a specific intervention"
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieving customer information and the list of interventions that took place for a specific building",
+					"request": {
+						"url": "https://rails-api-graphql.herokuapp.com/graphql",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\":  \"query { building(id: 4) { customerInfo interventions { interventionInfo } } }\"\r\n}"
+						},
+						"description": "Retrieving customer information and the list of interventions that took place for a specific building\r\n\r\nwe created a relation within customers table that allows us to get the following fields from the Users table linked to customers by id.\r\n\r\nfistName \r\nlastName "
+					},
+					"response": []
+				},
+				{
+					"name": "Retrieval of all interventions carried out by a specified employee with the buildings associated with these interventions including the details (Table BuildingDetails) associated with these buildings",
+					"request": {
+						"url": "https://rails-api-graphql.herokuapp.com/graphql",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\":  \"query { employee(id: 4) { interventions { interventionInfo buildingDetail { buildingDetailInfo } } } }\"\r\n}"
+						},
+						"description": "Retrieval of all interventions carried out by a specified employee with the buildings associated with these interventions including the details (Table BuildingDetails) associated with these buildings"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bonus Queries (GraphQL)",
+			"description": "",
+			"item": [
+				{
+					"name": "Retrive for a specific customers  all the elevators  status of its buildings",
+					"request": {
+						"url": "https://rails-api-graphql.herokuapp.com/graphql",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": \"query { customer(id: 2) { elevatorsList { id elevatorStatus } } }\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "For almost all the possible queries",
+					"request": {
+						"url": "https://rails-api-graphql.herokuapp.com/graphql",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"query\": \"query {intervention (id:1){id employeeId buildingId batteryId columnId elevatorId startIntervention endIntervention result report status } building(id:1) {id customerId adminContactId technicalContactId administratorFullName administratorEmail administratorPhoneNumber technicalContactPhone technicalContactEmail technicalContactPhone buildingDetailId addressId} address (id:1) {id buildingId  status entity numberAndStreet suiteOrApartment city postalCode country notes} customer (id:1){id userId companyName companyContactFullName companyContactPhone companyContactEmail companyDescription technicalAuthorityFullName technicalAuthorityPhoneNumber technicalManagerEmailService addressId} user(id:1){id firstName lastName title email encryptedPassword} employee(id:1){id firstName lastName function phone email userId} user(id:1){id firstName lastName title email encryptedPassword} buildingDetail(id:4) { id value buildingId informationKey }}\"\r\n}"
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
